@@ -105,8 +105,8 @@ class Authenticator extends Component implements AuthenticatorInterface
                 'grant_type' => 'authorization_code',
                 'code' => $code,
                 'redirect_uri' => $redirectUri,
-                'client_id' => $this->appId,
-                'client_secret' => $this->appSecret,
+                'client_id' => $this->_appId,
+                'client_secret' => $this->_appSecret,
             ]);
         } catch (LinkedInTransferException $e) {
             // most likely that user very recently revoked authorization.
@@ -145,7 +145,7 @@ class Authenticator extends Component implements AuthenticatorInterface
         // Build request params
         $requestParams = ArrayHelper::merge([
             'response_type' => 'code',
-            'client_id' => $this->appId,
+            'client_id' => $this->_appId,
             'state' => $this->getStorage()->get('state'),
             'redirect_uri' => null,
         ], $options);
