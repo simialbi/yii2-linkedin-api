@@ -1,0 +1,55 @@
+{
+	"name": "simialbi/yii2-linkedin-api",
+	"description": "LinkedIn API client for Yii framework",
+	"keywords": [
+		"yii2",
+		"linkedin",
+		"api"
+	],
+	"type": "yii2-extension",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/simialbi/yii2-linkedin-api/issues",
+		"source": "https://github.com/simialbi/yii2-linkedin-api"
+	},
+	"authors": [
+		{
+			"name": "Simon Karlen",
+			"email": "simi.albi@outlook.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=5.6.0",
+		"yiisoft/yii2": "^2.0.5",
+		"yiisoft/yii2-httpclient": "^2.0.0"
+	},
+	"require-dev": {
+		"yiisoft/yii2-coding-standards": "~2.0",
+		"phpunit/phpunit": "*"
+	},
+	"config": {
+		"process-timeout": 1800,
+		"secure-http": false,
+		"fxp-asset": {
+			"enable": false
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"simialbi\\yii2\\linkedin\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"yiiunit\\extensions\\linkedin\\": "tests"
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	]
+}
