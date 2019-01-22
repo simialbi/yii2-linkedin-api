@@ -72,9 +72,6 @@ class RequestManager extends Component implements RequestManagerInterface
     {
         if ($this->_client === null) {
             $this->_client = new Client([
-                'requestConfig' => [
-                    'format' => Client::FORMAT_JSON
-                ],
                 'responseConfig' => [
                     'format' => Client::FORMAT_JSON
                 ]
