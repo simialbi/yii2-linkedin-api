@@ -29,7 +29,7 @@ class ArrayStorage extends BaseDataStorage
      */
     public function set($key, $value)
     {
-        ArrayHelper::setValue($this->_storage, $key, $value);
+        ArrayHelper::setValue($this->_storage, $this->getStorageKeyId($key), $value);
     }
 
     /**
@@ -41,7 +41,7 @@ class ArrayStorage extends BaseDataStorage
      */
     public function get($key)
     {
-        return ArrayHelper::getValue($this->_storage, $key);
+        return ArrayHelper::getValue($this->_storage, $this->getStorageKeyId($key));
     }
 
     /**
@@ -51,6 +51,6 @@ class ArrayStorage extends BaseDataStorage
      */
     public function clear($key)
     {
-        ArrayHelper::remove($this->_storage, $key);
+        ArrayHelper::remove($this->_storage, $this->getStorageKeyId($key));
     }
 }

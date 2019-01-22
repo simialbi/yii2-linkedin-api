@@ -39,7 +39,7 @@ class SessionStorage extends BaseDataStorage
     {
         $this->validateKey($key);
 
-        return Yii::$app->session->get($key);
+        return Yii::$app->session->get($this->getStorageKeyId($key));
     }
 
     /**
@@ -49,6 +49,6 @@ class SessionStorage extends BaseDataStorage
     {
         $this->validateKey($key);
 
-        return Yii::$app->session->remove($key);
+        return Yii::$app->session->remove($this->getStorageKeyId($key));
     }
 }
