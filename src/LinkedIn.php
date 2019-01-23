@@ -29,9 +29,10 @@ use yii\web\HeaderCollection;
  *
  * @package simialbi\yii2\linkedin
  *
+ * @property AuthenticatorInterface $authenticator
+ * @property-read \yii\httpclient\Response $lastResponse
  * @property-write string $appId
  * @property-write string $appSecret
- * @property AuthenticatorInterface $authenticator
  */
 class LinkedIn extends Component implements LinkedInInterface
 {
@@ -112,7 +113,7 @@ class LinkedIn extends Component implements LinkedInInterface
         foreach ($initialHeaders as $name => $value) {
             $headers->add($name, $value);
         }
-        $headers->set('Authorization', 'Bearer %s' . (string)$this->getAccessToken());
+        $headers->set('Authorization', 'Bearer ' . (string)$this->getAccessToken());
 
         if ($body) {
             $body = Json::htmlEncode($options['json']);
