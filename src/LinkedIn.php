@@ -106,7 +106,7 @@ class LinkedIn extends Component implements LinkedInInterface
     public function api($method, $resource, array $options = [])
     {
         // Add access token to the headers
-        $initialHeaders = ArrayHelper::remove($options, 'headers');
+        $initialHeaders = ArrayHelper::remove($options, 'headers', []);
         $body = ArrayHelper::remove($options, 'body');
         $headers = new HeaderCollection();
         foreach ($initialHeaders as $name => $value) {
